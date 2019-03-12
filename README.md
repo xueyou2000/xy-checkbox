@@ -20,6 +20,8 @@ yarn add xy-checkbox
 import React from "react";
 import ReactDOM from "react-dom";
 import XyCheckbox from "xy-checkbox";
+// 可选的引入样式
+import "xy-checkbox/assets/index.css";
 ReactDOM.render(<XyCheckbox />, container);
 ```
 
