@@ -1,6 +1,6 @@
 {
     "name": "xy-checkbox",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "基于React的基础组件",
     "types": "es/index.d.ts",
     "main": "es/index.js",
@@ -16,6 +16,7 @@
         "test": "quick-react-scripts test",
         "build": "quick-react-scripts build",
         "start": "start-storybook -p 6006",
+        "build:storybook": "build-storybook",
         "_publish": "yarn run test && yarn run build && npm publish"
     },
     "keywords": [

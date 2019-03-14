@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent } from "react-testing-library";
 import Checkbox from "../src";
 
-describe("rc-checkbox", () => {
+describe("xy-checkbox", () => {
     test("render", () => {
         // Arrange
         const wrapper = render(
@@ -27,27 +27,6 @@ describe("rc-checkbox", () => {
         fireEvent.change(input, { target: { checked: false } });
         // Assert: 断言此时checked状态为false
         expect(input.checked).toBeFalsy();
-    });
-
-    test("click radio", () => {
-        const wrapper = render(
-            <div>
-                <label htmlFor="theme">
-                    <Checkbox id="theme" type="radio" />
-                    useTheme
-                </label>
-            </div>
-        );
-        const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
-        expect(input.type).toBe("radio");
-        expect(input.checked).toBeFalsy();
-
-        fireEvent.change(input, { target: { checked: true } });
-        expect(input.checked).toBeTruthy();
-
-        // Act: 模拟input:radio点击选中后再次点击依然是选中状态
-        fireEvent.change(input, { target: { checked: true } });
-        expect(input.checked).toBeTruthy();
     });
 
     test("passes data-* props to input", () => {

@@ -28,11 +28,6 @@ export interface CheckboxProps {
      */
     name?: string;
     /**
-     * 类型
-     * @description 复选框还是单选框
-     */
-    type?: "checkbox" | "radio";
-    /**
      * tabIndex
      */
     tabIndex?: number;
