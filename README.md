@@ -2,16 +2,16 @@
 
 ---
 
-> 基于`React Hooks` + `typescript`的基础组件
+> 基于`React Hooks` + `typescript`的基础组件, 只提供`es`模块
 
 ## 安装
 
 ```sh
 # npm
-npm install --save xy-checkbox
+npm install --save xy-checkbox classNames utils-hooks
 
 # yarn
-yarn add xy-checkbox
+yarn add xy-checkbox classNames utils-hooks
 ```
 
 ## 使用
@@ -19,10 +19,10 @@ yarn add xy-checkbox
 ```ts
 import React from "react";
 import ReactDOM from "react-dom";
-import XyCheckbox from "xy-checkbox";
+import Checkbox from "xy-checkbox";
 // 可选的引入样式
 import "xy-checkbox/assets/index.css";
-ReactDOM.render(<XyCheckbox />, container);
+ReactDOM.render(<Checkbox />, container);
 ```
 
 ## 开发
@@ -43,4 +43,4 @@ yarn run test
 
 ## 开源许可
 
-rc-xy-checkbox is released under the MIT license.
+xy-checkbox is released under the MIT license.

@@ -1,7 +1,7 @@
-import React from "react";
 import classNames from "classnames";
-import { CheckboxProps } from "./interface";
+import React from "react";
 import useControll from "utils-hooks/es/useControll";
+import { CheckboxProps } from "./interface";
 
 export function Checkbox(props: CheckboxProps) {
     const { prefixCls = "xy-checkbox", className, style, defaultChecked, ...rest } = props;
@@ -11,6 +11,19 @@ export function Checkbox(props: CheckboxProps) {
         [`${prefixCls}-disabled`]: props.disabled,
         [`${prefixCls}-readonly`]: props.readOnly
     });
+    const inputProps = {
+        ...rest,
+        type: "checkbox",
+        "aria-disabled": props.disabled || props.readOnly,
+        className: `${prefixCls}-input`,
+        onChange: handleCheckChange,
+        onKeyPress: handleKeyPress
+    };
+    if (isControll) {
+        inputProps["checked"] = checked;
+    } else {
+        inputProps["defaultChecked"] = defaultChecked;
+    }
 
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (props.disabled || props.readOnly) {
@@ -34,10 +47,11 @@ export function Checkbox(props: CheckboxProps) {
     return (
         <span className={classString} style={style}>
             {/* 注意 ...rest 必须在前面, 后面的 checked, onChange 将覆盖rest里的值 */}
-            <input {...rest} type="checkbox" checked={checked} className={`${prefixCls}-input`} onChange={handleCheckChange} onKeyPress={handleKeyPress} />
+            {/* <input {...rest} type="checkbox" aria-disabled={props.disabled || props.readOnly} checked={checked} className={`${prefixCls}-input`} onChange={handleCheckChange} onKeyPress={handleKeyPress} /> */}
+            <input {...inputProps} />
             <span className={`${prefixCls}-inner`} />
         </span>
     );
 }
 
-export default Checkbox;
+export default React.memo(Checkbox);

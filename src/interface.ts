@@ -12,14 +12,6 @@ export interface CheckboxProps {
      */
     style?: React.CSSProperties;
     /**
-     * 复选框是否选中
-     */
-    checked?: boolean;
-    /**
-     * 默认是否选中
-     */
-    defaultChecked?: boolean;
-    /**
      * ID
      */
     id?: string;
@@ -31,6 +23,14 @@ export interface CheckboxProps {
      * tabIndex
      */
     tabIndex?: number;
+    /**
+     * 复选框是否选中
+     */
+    checked?: boolean;
+    /**
+     * 默认是否选中
+     */
+    defaultChecked?: boolean;
     /**
      * 是否禁用
      */
