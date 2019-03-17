@@ -34,7 +34,7 @@ export function Checkbox(props: CheckboxProps) {
             setChecked(e.target.checked);
         }
         if (props.onChange) {
-            props.onChange(e);
+            props.onChange(e.target.checked);
         }
     }
 

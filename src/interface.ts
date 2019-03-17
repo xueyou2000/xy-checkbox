@@ -50,7 +50,7 @@ export interface CheckboxProps {
     /**
      * Checkbox值更改事件
      */
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (chcked: boolean) => void;
     /**
      * Checkbox聚集焦点事件
      */
