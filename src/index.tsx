@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import useControll from "utils-hooks/es/useControll";
+import { useControll } from "utils-hooks";
 import { CheckboxProps } from "./interface";
 
 export function Checkbox(props: CheckboxProps) {
@@ -46,8 +46,6 @@ export function Checkbox(props: CheckboxProps) {
 
     return (
         <span className={classString} style={style}>
-            {/* 注意 ...rest 必须在前面, 后面的 checked, onChange 将覆盖rest里的值 */}
-            {/* <input {...rest} type="checkbox" aria-disabled={props.disabled || props.readOnly} checked={checked} className={`${prefixCls}-input`} onChange={handleCheckChange} onKeyPress={handleKeyPress} /> */}
             <input {...inputProps} />
             <span className={`${prefixCls}-inner`} />
         </span>
