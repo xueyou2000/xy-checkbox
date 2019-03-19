@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.5 (Mon Mar 18 2019)
+
+-   更新`utils-hooks`依赖
+
 ## 1.0.4 (Mon Mar 18 2019)
 
 -   更改输出目标`esnext`为`es5`
