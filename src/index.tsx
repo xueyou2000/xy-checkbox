@@ -4,8 +4,12 @@ import { useControll } from "utils-hooks";
 import { CheckboxProps } from "./interface";
 
 export function Checkbox(props: CheckboxProps) {
-    const { prefixCls = "xy-checkbox", className, style, defaultChecked, ...rest } = props;
+    const { className, style, defaultChecked, type = "checkbox", ...rest } = props;
     const [checked, setChecked, isControll] = useControll(props, "checked", "defaultChecked");
+    let prefixCls;
+    if (!props.prefixCls) {
+        prefixCls = `xy-${type}`;
+    }
     const classString = classNames(prefixCls, className, {
         [`${prefixCls}-checked`]: checked,
         [`${prefixCls}-disabled`]: props.disabled,
@@ -13,7 +17,7 @@ export function Checkbox(props: CheckboxProps) {
     });
     const inputProps = {
         ...rest,
-        type: "checkbox",
+        type,
         "aria-disabled": props.disabled || props.readOnly,
         className: `${prefixCls}-input`,
         onChange: handleCheckChange,
@@ -26,7 +30,7 @@ export function Checkbox(props: CheckboxProps) {
     }
 
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
-        if (props.disabled || props.readOnly) {
+        if (props.disabled || props.readOnly || (type === "radio" && checked)) {
             return;
         }
         if (!isControll) {

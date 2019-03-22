@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.6 (Fri Mar 22 2019)
+
+-   增加`radio`类型
+
 ## 1.0.5 (Mon Mar 18 2019)
 
 -   更新`utils-hooks`依赖

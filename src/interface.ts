@@ -40,6 +40,10 @@ export interface CheckboxProps {
      */
     autoFocus?: boolean;
     /**
+     * 类型
+     */
+    type?: "checkbox" | "radio";
+    /**
      * 同原生input checkbox一样的value
      */
     value?: any;
