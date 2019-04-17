@@ -32,7 +32,7 @@ export default function() {
     return (
         <div>
             <h1>CheckboxGroup</h1>
-            <CheckboxGroup>
+            <CheckboxGroup disabled={true}>
                 <label htmlFor="c1">
                     <Checkbox id="c1" value="c1" />
                     &nbsp; 满血复活{" "}
@@ -64,11 +64,11 @@ export default function() {
                     </label>
                     <label htmlFor="bb2">
                         <Checkbox id="bb2" value="上海" />
-                        北京
+                        上海
                     </label>
                     <label htmlFor="bb3">
                         <Checkbox id="bb3" value="广州" />
-                        北京
+                        广州
                     </label>
                 </CheckboxGroup>
             </div>

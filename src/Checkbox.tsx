@@ -6,18 +6,22 @@ import { GroupContext } from "./Context";
 
 export function Checkbox(props: CheckboxProps) {
     const { className, style, defaultChecked, indeterminate, type = "checkbox", ...rest } = props;
-    let [checked, setChecked, isControll] = useControll(props, "checked", "defaultChecked");
+    let [checked, setChecked, isControll] = useControll(props, "checked", "defaultChecked", false);
     const context = useContext(GroupContext);
     let prefixCls;
     if (!props.prefixCls) {
         prefixCls = `xy-${type}`;
     }
     if (context && context.value) {
-        checked = context.value.some((x) => x === props.value);
+        if (type === "checkbox") {
+            checked = context.value.some((x) => x === props.value);
+        } else {
+            checked = context.value === props.value;
+        }
     }
     const classString = classNames(prefixCls, className, {
         [`${prefixCls}-checked`]: checked,
-        [`${prefixCls}-disabled`]: props.disabled,
+        [`${prefixCls}-disabled`]: (context && context.disabled) || props.disabled,
         [`${prefixCls}-readonly`]: props.readOnly,
         [`${prefixCls}-indeterminate`]: indeterminate
     });
@@ -63,7 +67,7 @@ export function Checkbox(props: CheckboxProps) {
         <span className={classString} style={style}>
             <input
                 {...rest}
-                {...(isControll || (context && context.value) ? { checked } : { defaultChecked: checked })}
+                {...(isControll || (context && context.onChange) ? { checked } : { defaultChecked: checked })}
                 type={type}
                 aria-disabled={props.disabled}
                 className={`${prefixCls}-input`}
