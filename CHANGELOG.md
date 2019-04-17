@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.0 (Wed Apr 17 2019)
+
+-   改变导出
+-   增加`CheckboxGroup`
+-   增加`Radio`组件
+-   增加`RadioGroup`
+
 ## 1.0.6 (Fri Mar 22 2019)
 
 -   增加`radio`类型
