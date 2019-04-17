@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
-import Checkbox from "../src";
-import "../src/assets/index.scss";
+import { Checkbox } from "../src";
 
 export default function() {
     const [checked, setChecked] = useState(false);

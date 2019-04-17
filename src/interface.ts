@@ -32,6 +32,10 @@ export interface CheckboxProps {
      */
     defaultChecked?: boolean;
     /**
+     * 不确定状态
+     */
+    indeterminate?: boolean;
+    /**
      * 是否禁用
      */
     disabled?: boolean;
@@ -54,7 +58,7 @@ export interface CheckboxProps {
     /**
      * Checkbox值更改事件
      */
-    onChange?: (chcked: boolean) => void;
+    onChange?: (chcked: boolean, value: any) => void;
     /**
      * Checkbox聚集焦点事件
      */
@@ -67,4 +71,62 @@ export interface CheckboxProps {
      * Checkbox点击事件
      */
     onClick?: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+}
+
+export interface CheckboxGroupProps {
+    /**
+     * 附加类名
+     */
+    prefixCls?: string;
+    /**
+     * 根节点的附加类名
+     */
+    className?: string;
+    /**
+     * 内联样式
+     */
+    style?: React.CSSProperties;
+    /**
+     * 是否禁用整个组
+     */
+    disabled?: boolean;
+    /**
+     * 内容
+     */
+    children?: React.ReactNode;
+    /**
+     * 选中复选框值集合
+     */
+    value?: any[];
+    /**
+     * 默认选中复选框值集合
+     */
+    defaultValue?: any[];
+    /**
+     * change事件
+     */
+    onChange?: (val: any[], checkedAll: boolean) => void;
+}
+
+export interface GroupContextState {
+    /**
+     * 选中复选框值集合
+     */
+    value?: any[];
+    /**
+     * 是否禁用整个组
+     */
+    disabled?: boolean;
+    /**
+     * checkbox/radio 改变事件
+     */
+    onChange?: (chcked: boolean, value: any) => void;
+    /**
+     * 添加 checkbox/radio
+     */
+    onAdd?: (value: any) => void;
+    /**
+     * 移除 checkbox/radio
+     */
+    onRemove?: (value: any) => void;
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
-import Checkbox from "../src";
-import "../src/assets/index.scss";
+import { Checkbox } from "../src";
 
 export default function() {
     const [checked, setChecked] = useState(true);
@@ -39,6 +38,8 @@ export default function() {
             <button onClick={() => setChecked((preChcked) => !preChcked)}>切换受控组件选中状态</button>&nbsp;
             <button onClick={() => setDisabled((preDisabled) => !preDisabled)}>切换禁用状态</button>&nbsp;
             <button onClick={() => setReadonly((preReadonly) => !preReadonly)}>切换只读状态</button>&nbsp;
+            <h1>不确定状态</h1>
+            <Checkbox defaultChecked={true} indeterminate={true} />
         </div>
     );
 }
