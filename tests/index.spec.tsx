@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "react-testing-library";
-import Checkbox from "../src";
+import { Checkbox } from "../src";
 
 describe("xy-checkbox", () => {
     test("render", () => {
