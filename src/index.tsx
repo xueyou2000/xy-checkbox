@@ -15,19 +15,6 @@ export function Checkbox(props: CheckboxProps) {
         [`${prefixCls}-disabled`]: props.disabled,
         [`${prefixCls}-readonly`]: props.readOnly
     });
-    const inputProps = {
-        ...rest,
-        type,
-        "aria-disabled": props.disabled || props.readOnly,
-        className: `${prefixCls}-input`,
-        onChange: handleCheckChange,
-        onKeyPress: handleKeyPress
-    };
-    if (isControll) {
-        inputProps["checked"] = checked;
-    } else {
-        inputProps["defaultChecked"] = defaultChecked;
-    }
 
     function handleCheckChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (props.disabled || props.readOnly || (type === "radio" && checked)) {
@@ -50,7 +37,7 @@ export function Checkbox(props: CheckboxProps) {
 
     return (
         <span className={classString} style={style}>
-            <input {...inputProps} />
+            <input {...rest} {...(isControll ? { checked } : { defaultChecked: checked })} type={type} aria-disabled={props.disabled} className={`${prefixCls}-input`} onChange={handleCheckChange} onKeyPress={handleKeyPress} />
             <span className={`${prefixCls}-inner`} />
         </span>
     );
