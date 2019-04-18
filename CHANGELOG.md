@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1 (Thu Apr 18 2019)
+
+-   分离最小化`CheckboxMini`和`Checkbox`
+-   `CheckboxMini`处理最简单的逻辑
+-   `Checkbox`封装与`CheckboxGroup`的交互, 封装 label 标签
+
 ## 1.1.0 (Wed Apr 17 2019)
 
 -   改变导出

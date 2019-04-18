@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { action } from "@storybook/addon-actions";
-import { Checkbox } from "../src";
+import { Radio } from "../src";
 
 export default function() {
     const [checked, setChecked] = useState(false);
@@ -9,13 +9,12 @@ export default function() {
 
     return (
         <div>
-            <h1>与原生Checkbox对比</h1>
+            <h1>与原生Radio对比</h1>
             <p>Tips: 快捷键A, 打开插件面板查看点击事件</p>
             <p>
-                <label htmlFor="c1">
-                    <Checkbox id="c1" checked={checked} type="radio" onChange={setChecked} disabled={disabled} readOnly={readonly} />
-                    &nbsp; 受控复选框
-                </label>
+                <Radio checked={checked} onChange={setChecked} disabled={disabled} readOnly={readonly}>
+                    受控复选框
+                </Radio>
             </p>
             <p>
                 <label htmlFor="c2">
@@ -24,10 +23,9 @@ export default function() {
                 </label>
             </p>
             <p>
-                <label htmlFor="c3">
-                    <Checkbox id="c3" name="ab" type="radio" autoFocus={true} defaultChecked={false} onChange={action("clicked")} disabled={disabled} readOnly={readonly} />
-                    &nbsp; 默认值复选框
-                </label>
+                <Radio autoFocus={true} defaultChecked={false} onChange={action("clicked")} disabled={disabled} readOnly={readonly}>
+                    默认值复选框
+                </Radio>
             </p>
             <p>
                 <label htmlFor="c4">

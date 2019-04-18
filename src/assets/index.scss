@@ -18,6 +18,8 @@ $color-checked-disabled-border: #cccccc;
     outline: none;
     cursor: pointer;
     top: -0.09em;
+    user-select: none;
+    cursor: pointer;
 
     &:after {
         border-color: $color-disabled;
@@ -186,6 +188,20 @@ $color-checked-disabled-border: #cccccc;
         visibility: hidden;
     }
 }
+.radio-label,
+.checkbox-label {
+    user-select: none;
+    cursor: pointer;
+    margin-left: 3px;
+}
+.checkbox-wrap {
+    margin-right: 8px;
+    user-select: none;
+    cursor: pointer;
+}
+.radio-label {
+    vertical-align: middle;
+}
 
 .#{$radioWarpPrefixCls} {
     box-sizing: border-box;
@@ -197,6 +213,8 @@ $color-checked-disabled-border: #cccccc;
     vertical-align: middle;
     cursor: pointer;
     outline: none;
+    user-select: none;
+    cursor: pointer;
 
     &:after {
         border-color: $color-disabled;

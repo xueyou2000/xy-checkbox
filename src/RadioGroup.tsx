@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import React, { useRef } from "react";
-import { RadioGroupProps } from "./interface";
+import React from "react";
 import { useControll } from "utils-hooks";
 import { GroupContext } from "./Context";
+import { RadioGroupProps } from "./interface";
 
 export function RadioGroup(props: RadioGroupProps) {
     const { prefixCls = "xy-radio-xgroup", className, style, disabled, children } = props;

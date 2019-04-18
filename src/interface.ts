@@ -40,6 +40,10 @@ export interface CheckboxProps {
      */
     disabled?: boolean;
     /**
+     * 内容
+     */
+    children?: React.ReactNode;
+    /**
      * 是否自动聚集焦点
      */
     autoFocus?: boolean;

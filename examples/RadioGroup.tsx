@@ -8,16 +8,9 @@ export default function() {
             <h1>RadioGroup</h1>
 
             <RadioGroup>
-                <label htmlFor="c1">
-                    <Radio id="c1" value="c1" />男
-                </label>
-                <label htmlFor="c2">
-                    <Radio id="c2" value="c2" />女
-                </label>
-                <label htmlFor="c3">
-                    <Radio id="c3" value="c3" />
-                    未知
-                </label>
+                <Radio value="c1">男</Radio>
+                <Radio value="c2">女</Radio>
+                <Radio value="c3">未知</Radio>
             </RadioGroup>
         </div>
     );

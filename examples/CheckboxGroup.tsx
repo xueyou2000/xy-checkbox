@@ -33,43 +33,22 @@ export default function() {
         <div>
             <h1>CheckboxGroup</h1>
             <CheckboxGroup disabled={true}>
-                <label htmlFor="c1">
-                    <Checkbox id="c1" value="c1" />
-                    &nbsp; 满血复活{" "}
-                </label>
-
-                <label htmlFor="c2">
-                    <Checkbox id="c2" value="c2" />
-                    &nbsp; 等级满级{" "}
-                </label>
-
-                <label htmlFor="c3">
-                    <Checkbox id="c3" value="c3" />
-                    &nbsp; 无敌{" "}
-                </label>
+                <Checkbox value="c1">满血复活</Checkbox>
+                <Checkbox value="c2">等级满级</Checkbox>
+                <Checkbox value="c3">无敌</Checkbox>
             </CheckboxGroup>
 
             <h2>不确定状态</h2>
             <div>
-                <label htmlFor="b1">
-                    <Checkbox id="b1" checked={checkedAll} indeterminate={indeterminate} onChange={handlToggleCheck} />
+                <Checkbox checked={checkedAll} indeterminate={indeterminate} onChange={handlToggleCheck}>
                     全选
-                </label>
+                </Checkbox>
 
                 <br />
                 <CheckboxGroup value={value} onChange={handleChange}>
-                    <label htmlFor="bb1">
-                        <Checkbox id="bb1" value="北京" />
-                        北京
-                    </label>
-                    <label htmlFor="bb2">
-                        <Checkbox id="bb2" value="上海" />
-                        上海
-                    </label>
-                    <label htmlFor="bb3">
-                        <Checkbox id="bb3" value="广州" />
-                        广州
-                    </label>
+                    <Checkbox value="北京">北京</Checkbox>
+                    <Checkbox value="上海">上海</Checkbox>
+                    <Checkbox value="广州">广州</Checkbox>
                 </CheckboxGroup>
             </div>
         </div>

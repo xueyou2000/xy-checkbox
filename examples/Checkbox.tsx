@@ -12,10 +12,9 @@ export default function() {
             <h1>与原生Checkbox对比</h1>
             <p>Tips: 快捷键A, 打开插件面板查看点击事件</p>
             <p>
-                <label htmlFor="c1">
-                    <Checkbox id="c1" checked={checked} onChange={action("clicked")} disabled={disabled} readOnly={readonly} />
-                    &nbsp; 受控复选框
-                </label>
+                <Checkbox checked={checked} onChange={action("clicked")} disabled={disabled} readOnly={readonly}>
+                    受控复选框
+                </Checkbox>
             </p>
             <p>
                 <label htmlFor="c2">
@@ -24,10 +23,9 @@ export default function() {
                 </label>
             </p>
             <p>
-                <label htmlFor="c3">
-                    <Checkbox id="c3" name="ab" autoFocus={true} defaultChecked={true} onChange={action("clicked")} disabled={disabled} readOnly={readonly} />
-                    &nbsp; 默认值复选框
-                </label>
+                <Checkbox id="c3" name="ab" autoFocus={true} defaultChecked={true} onChange={action("clicked")} disabled={disabled} readOnly={readonly}>
+                    默认值复选框
+                </Checkbox>
             </p>
             <p>
                 <label htmlFor="c4">
