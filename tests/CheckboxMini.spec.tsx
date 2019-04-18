@@ -1,14 +1,14 @@
 import React from "react";
 import { render, fireEvent } from "react-testing-library";
-import { Checkbox } from "../src";
+import { CheckboxMini } from "../src";
 
-describe("xy-checkbox", () => {
+describe("Checkbox", () => {
     test("render", () => {
         // Arrange
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" />
+                    <CheckboxMini id="theme" />
                     useTheme
                 </label>
             </div>
@@ -33,7 +33,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" data-type="my-data-type" />
+                    <CheckboxMini id="theme" data-type="my-data-type" />
                     useTheme
                 </label>
             </div>
@@ -46,7 +46,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" aria-label="my-aria-label" />
+                    <CheckboxMini id="theme" aria-label="my-aria-label" />
                     useTheme
                 </label>
             </div>
@@ -59,7 +59,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" value={6} />
+                    <CheckboxMini id="theme" value={6} />
                     useTheme
                 </label>
             </div>
@@ -70,7 +70,7 @@ describe("xy-checkbox", () => {
 
     test("autoFocus", () => {
         const handleFocus = jest.fn();
-        render(<Checkbox autoFocus={true} onFocus={handleFocus} />);
+        render(<CheckboxMini autoFocus={true} onFocus={handleFocus} />);
         expect(handleFocus).toBeCalled();
     });
 
@@ -79,7 +79,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" disabled={true} onChange={handleChange} />
+                    <CheckboxMini id="theme" disabled={true} onChange={handleChange} />
                     useTheme
                 </label>
             </div>
@@ -102,7 +102,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" readOnly={true} onChange={handleChange} />
+                    <CheckboxMini id="theme" readOnly={true} onChange={handleChange} />
                     useTheme
                 </label>
             </div>
@@ -125,7 +125,7 @@ describe("xy-checkbox", () => {
         const wrapper = render(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" checked={true} onChange={handleChange} />
+                    <CheckboxMini id="theme" checked={true} onChange={handleChange} />
                     useTheme
                 </label>
             </div>
@@ -142,7 +142,7 @@ describe("xy-checkbox", () => {
         wrapper.rerender(
             <div>
                 <label htmlFor="theme">
-                    <Checkbox id="theme" checked={false} onChange={handleChange} />
+                    <CheckboxMini id="theme" checked={false} onChange={handleChange} />
                     useTheme
                 </label>
             </div>
