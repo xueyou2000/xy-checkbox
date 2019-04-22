@@ -95,6 +95,10 @@ export interface CheckboxGroupProps {
      */
     disabled?: boolean;
     /**
+     * tabIndex
+     */
+    tabIndex?: number;
+    /**
      * 内容
      */
     children?: React.ReactNode;
@@ -110,6 +114,10 @@ export interface CheckboxGroupProps {
      * change事件
      */
     onChange?: (val: any[], checkedAll: boolean) => void;
+    /**
+     * 复选框组失去焦点事件
+     */
+    onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
 }
 
 export interface RadioGroupProps {
@@ -130,6 +138,10 @@ export interface RadioGroupProps {
      */
     disabled?: boolean;
     /**
+     * tabIndex
+     */
+    tabIndex?: number;
+    /**
      * 内容
      */
     children?: React.ReactNode;
@@ -145,6 +157,10 @@ export interface RadioGroupProps {
      * change事件
      */
     onChange?: (val: any) => void;
+    /**
+     * 复选框组失去焦点事件
+     */
+    onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
 }
 
 export interface GroupContextState {

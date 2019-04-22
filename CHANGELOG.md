@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.2 (Mon Apr 22 2019)
+
+-   `CheckboxGroup`, `RadioGroup` 增加`onBlur`事件
+
 ## 1.1.1 (Thu Apr 18 2019)
 
 -   分离最小化`CheckboxMini`和`Checkbox`

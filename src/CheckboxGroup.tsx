@@ -5,7 +5,7 @@ import { useControll } from "utils-hooks";
 import { GroupContext } from "./Context";
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
-    const { prefixCls = "xy-checkbo-xgroup", className, style, disabled, children } = props;
+    const { prefixCls = "xy-checkbo-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
     const [value, setValue, isControll] = useControll<any[]>(props, "value", "defaultValue", []);
     const checkboxsRef = useRef<any[]>([]);
     const checkedAll = calcCheckedAll();
@@ -55,7 +55,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
 
     return (
         <GroupContext.Provider value={{ value, disabled, onAdd, onRemove, onChange }}>
-            <div className={classString} style={style}>
+            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur}>
                 {children}
             </div>
         </GroupContext.Provider>

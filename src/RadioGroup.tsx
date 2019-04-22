@@ -5,7 +5,7 @@ import { GroupContext } from "./Context";
 import { RadioGroupProps } from "./interface";
 
 export function RadioGroup(props: RadioGroupProps) {
-    const { prefixCls = "xy-radio-xgroup", className, style, disabled, children } = props;
+    const { prefixCls = "xy-radio-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
     const [value, setValue, isControll] = useControll(props, "value", "defaultValue");
     const classString = classNames(prefixCls, className, {
         [`${prefixCls}-disabled`]: disabled
@@ -33,7 +33,7 @@ export function RadioGroup(props: RadioGroupProps) {
 
     return (
         <GroupContext.Provider value={{ value, disabled, onChange }}>
-            <div className={classString} style={style}>
+            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur}>
                 {children}
             </div>
         </GroupContext.Provider>
