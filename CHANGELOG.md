@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.4 (Wed Apr 24 2019)
+
+-   调整主题色
+-   转发`ref`
+
 ## 1.1.3 (Wed Apr 24 2019)
 
 -   修复`CheckboxGroup`当`value`属性为`null`时的问题

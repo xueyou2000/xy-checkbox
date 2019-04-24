@@ -1,10 +1,10 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import { useMount, useUnmount } from "utils-hooks";
 import CheckboxMini from "./CheckboxMini";
 import { GroupContext } from "./Context";
 import { CheckboxProps } from "./interface";
 
-export default function Checkbox(props: CheckboxProps) {
+export default React.forwardRef((props: CheckboxProps, ref: React.MutableRefObject<any>) => {
     const context = useContext(GroupContext);
     const _props: CheckboxProps = Object.assign({}, props);
 
@@ -29,9 +29,9 @@ export default function Checkbox(props: CheckboxProps) {
     });
 
     return (
-        <label className="checkbox-wrap" htmlFor={_props.id}>
+        <label className="checkbox-wrap" htmlFor={_props.id} ref={ref}>
             <CheckboxMini {..._props} type="checkbox" />
             <span className="checkbox-label">{props.children}</span>
         </label>
     );
-}
+});

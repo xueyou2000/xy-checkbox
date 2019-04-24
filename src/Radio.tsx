@@ -4,7 +4,7 @@ import CheckboxMini from "./CheckboxMini";
 import { GroupContext } from "./Context";
 import { CheckboxProps } from "./interface";
 
-export default function Radio(props: CheckboxProps) {
+export default React.forwardRef((props: CheckboxProps, ref: React.MutableRefObject<any>) => {
     const context = useContext(GroupContext);
     const _props: CheckboxProps = Object.assign({}, props);
 
@@ -29,9 +29,9 @@ export default function Radio(props: CheckboxProps) {
     });
 
     return (
-        <label className="checkbox-wrap" htmlFor={_props.id}>
+        <label className="checkbox-wrap" htmlFor={_props.id} ref={ref}>
             <CheckboxMini {..._props} type="radio" />
             <span className="radio-label">{props.children}</span>
         </label>
     );
-}
+});

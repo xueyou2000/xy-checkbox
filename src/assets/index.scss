@@ -5,7 +5,7 @@ $radioInnerPrefixCls: "#{$radioWarpPrefixCls}-inner";
 
 $color-unchecked: #ffffff;
 $color-unchecked-border: #d9d9d9;
-$color-checked: #3dbcf6;
+$color-checked: #1890ff;
 $color-disabled: #f3f3f3;
 $color-checked-disabled-border: #cccccc;
 
@@ -120,7 +120,7 @@ $color-checked-disabled-border: #cccccc;
         &:after {
             position: absolute;
             display: table;
-            border: 0.1em solid #fff;
+            border: 0.13em solid #fff;
             border-top: 0;
             border-left: 0;
             transform: rotate(45deg) scale(1) translate(-50%, -50%);
@@ -258,11 +258,11 @@ $color-checked-disabled-border: #cccccc;
 
         &:after {
             position: absolute;
-            top: 25%;
-            left: 25%;
+            top: 18%;
+            left: 19%;
             display: table;
-            width: 50%;
-            height: 50%;
+            width: 66%;
+            height: 66%;
             background-color: $color-checked;
             border-top: 0;
             border-left: 0;

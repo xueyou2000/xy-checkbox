@@ -4,7 +4,7 @@ import { useControll } from "utils-hooks";
 import { GroupContext } from "./Context";
 import { RadioGroupProps } from "./interface";
 
-export function RadioGroup(props: RadioGroupProps) {
+export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref: React.MutableRefObject<any>) => {
     const { prefixCls = "xy-radio-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
     const [value, setValue, isControll] = useControll(props, "value", "defaultValue");
     const classString = classNames(prefixCls, className, {
@@ -33,11 +33,11 @@ export function RadioGroup(props: RadioGroupProps) {
 
     return (
         <GroupContext.Provider value={{ value, disabled, onChange }}>
-            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur}>
+            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur} ref={ref}>
                 {children}
             </div>
         </GroupContext.Provider>
     );
-}
+});
 
 export default React.memo(RadioGroup);

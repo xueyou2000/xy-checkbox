@@ -4,7 +4,7 @@ import { CheckboxGroupProps } from "./interface";
 import { useControll } from "utils-hooks";
 import { GroupContext } from "./Context";
 
-export function CheckboxGroup(props: CheckboxGroupProps) {
+export const CheckboxGroup = React.forwardRef((props: CheckboxGroupProps, ref: React.MutableRefObject<any>) => {
     const { prefixCls = "xy-checkbo-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
     const [_value, setValue, isControll] = useControll<any[]>(props, "value", "defaultValue", []);
     const value = _value === null ? [] : _value;
@@ -56,11 +56,11 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
 
     return (
         <GroupContext.Provider value={{ value, disabled, onAdd, onRemove, onChange }}>
-            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur}>
+            <div className={classString} style={style} tabIndex={tabIndex} onBlur={onBlur} ref={ref}>
                 {children}
             </div>
         </GroupContext.Provider>
     );
-}
+});
 
 export default React.memo(CheckboxGroup);
