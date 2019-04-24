@@ -5,7 +5,7 @@ import { useControll } from "utils-hooks";
 import { GroupContext } from "./Context";
 
 export const CheckboxGroup = React.forwardRef((props: CheckboxGroupProps, ref: React.MutableRefObject<any>) => {
-    const { prefixCls = "xy-checkbo-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
+    const { prefixCls = "xy-checkbox-group", className, style, disabled, children, tabIndex, onBlur } = props;
     const [_value, setValue, isControll] = useControll<any[]>(props, "value", "defaultValue", []);
     const value = _value === null ? [] : _value;
     const checkboxsRef = useRef<any[]>([]);

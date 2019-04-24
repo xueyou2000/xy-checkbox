@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.5 (Wed Apr 24 2019)
+
+-   修复`CheckboxGroup`, `RadioGroup`样式名拼错
+
 ## 1.1.4 (Wed Apr 24 2019)
 
 -   调整主题色
