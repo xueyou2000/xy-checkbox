@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.3 (Wed Apr 24 2019)
+
+-   修复`CheckboxGroup`当`value`属性为`null`时的问题
+
 ## 1.1.2 (Mon Apr 22 2019)
 
 -   `CheckboxGroup`, `RadioGroup` 增加`onBlur`事件

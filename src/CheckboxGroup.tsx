@@ -6,7 +6,8 @@ import { GroupContext } from "./Context";
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
     const { prefixCls = "xy-checkbo-xgroup", className, style, disabled, children, tabIndex, onBlur } = props;
-    const [value, setValue, isControll] = useControll<any[]>(props, "value", "defaultValue", []);
+    const [_value, setValue, isControll] = useControll<any[]>(props, "value", "defaultValue", []);
+    const value = _value === null ? [] : _value;
     const checkboxsRef = useRef<any[]>([]);
     const checkedAll = calcCheckedAll();
     const classString = classNames(prefixCls, className, {
