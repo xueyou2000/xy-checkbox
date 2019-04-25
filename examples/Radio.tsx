@@ -8,7 +8,7 @@ export default function() {
     const [readonly, setReadonly] = useState(false);
 
     return (
-        <div>
+        <div style={{ fontSize: "14px" }}>
             <h1>与原生Radio对比</h1>
             <p>Tips: 快捷键A, 打开插件面板查看点击事件</p>
             <p>
