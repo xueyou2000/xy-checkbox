@@ -25,21 +25,21 @@
 
 ```sh
 # npm
-npm install --save xy-checkbox classNames utils-hooks
+npm install --save xy-checkbox utils-hooks classNames
 
 # yarn
-yarn add xy-checkbox classNames utils-hooks
+yarn add xy-checkbox utils-hooks classNames
 ```
 
 ## 使用
 
-```ts
+```tsx
 import React from "react";
 import ReactDOM from "react-dom";
 import { Checkbox, Radio, CheckboxGroup, RadioGroup } from "xy-checkbox";
 // 可选的引入样式
 import "xy-checkbox/assets/index.css";
-ReactDOM.render(<Checkbox />, container);
+ReactDOM.render(<Checkbox>复选框</Checkbox>, container);
 ```
 
 ## 开发

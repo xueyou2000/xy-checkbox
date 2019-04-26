@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.1.6 (Fri Apr 26 2019)
+
+-   更新依赖
+
 ## 1.1.51 (Thu Apr 25 2019)
 
 -   修改`Radio`, `Checkbox`在 hover 状态下样式更加显眼
