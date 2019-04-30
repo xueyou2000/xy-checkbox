@@ -31,7 +31,6 @@ $color-checked-disabled-border: #cccccc;
     .#{$checkboxWarpPrefixCls}-input:focus + .#{$checkboxInnerPrefixCls} {
         border-color: $color-checked;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-        transform: scale(1.1);
     }
 
     .#{$checkboxInnerPrefixCls} {
@@ -204,7 +203,6 @@ $color-checked-disabled-border: #cccccc;
         .#{$checkboxWarpPrefixCls}:not(.#{$checkboxWarpPrefixCls}-disabled) .#{$checkboxInnerPrefixCls} {
             border-color: $color-checked;
             box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-            transform: scale(1.1);
         }
     }
 
@@ -212,7 +210,6 @@ $color-checked-disabled-border: #cccccc;
         .#{$radioWarpPrefixCls}:not(.#{$radioWarpPrefixCls}-disabled) .#{$radioInnerPrefixCls} {
             border-color: $color-checked;
             box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-            transform: scale(1.1);
         }
     }
 }
@@ -243,7 +240,6 @@ $color-checked-disabled-border: #cccccc;
     .#{$radioWarpPrefixCls}-input:focus + .#{$radioInnerPrefixCls} {
         border-color: $color-checked;
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
-        transform: scale(1.1);
     }
 
     .#{$radioWarpPrefixCls}-input {
