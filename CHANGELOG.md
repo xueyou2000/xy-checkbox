@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.3 (Wed May 22 2019)
+
+-   优化`radio`样式
+
 ## 1.2.2 (Sat May 11 2019)
 
 -   更新依赖
