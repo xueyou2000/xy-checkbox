@@ -263,21 +263,19 @@ $color-checked-disabled-border: #cccccc;
         width: 14px;
         height: 14px;
         background-color: $color-unchecked;
-        border-width: 0.05em;
+        border-width: 1px;
         border-style: solid;
         border-color: $color-unchecked-border;
         border-radius: 100px;
-        -webkit-transition: all 0.3s;
         transition: all 0.3s;
         box-sizing: border-box;
 
         &:after {
             position: absolute;
-            top: 3px;
-            left: 3px;
-            display: table;
-            width: 8px;
-            height: 8px;
+            top: -1px;
+            left: -1px;
+            width: 14px;
+            height: 14px;
             background-color: $color-checked;
             border-top: 0;
             border-left: 0;
@@ -293,11 +291,11 @@ $color-checked-disabled-border: #cccccc;
 .#{$radioWarpPrefixCls}-checked {
     &:after {
         position: absolute;
-        top: -7%;
-        left: -11%;
+        top: -1px;
+        left: -1px;
         width: 100%;
         height: 100%;
-        border: 0.1em solid $color-checked;
+        border: 1px solid $color-checked;
         border-radius: 50%;
         animation: CheckboxEffect 0.36s ease-in-out;
         animation-fill-mode: both;
@@ -308,9 +306,10 @@ $color-checked-disabled-border: #cccccc;
         border-color: $color-checked;
 
         &:after {
-            transform: scale(1);
+            transform: scale(0.6);
             opacity: 1;
             transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+            transform-origin: center center;
         }
     }
 }
