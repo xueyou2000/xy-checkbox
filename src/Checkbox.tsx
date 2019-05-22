@@ -7,7 +7,6 @@ import { CheckboxProps } from "./interface";
 export default React.forwardRef((props: CheckboxProps, ref: React.MutableRefObject<any>) => {
     const context = useContext(GroupContext);
     const _props: CheckboxProps = Object.assign({}, props);
-    console.log("重新渲染");
     if (context && context.value && context.onChange) {
         _props.checked = context.value.some((x) => x === props.value);
         _props.onChange = context.onChange;
