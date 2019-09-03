@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import { CheckboxMini } from "../src";
 
 describe("Checkbox", () => {
@@ -11,7 +11,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
 
@@ -36,7 +36,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" data-type="my-data-type" />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
         expect(input.getAttribute("data-type")).toBe("my-data-type");
@@ -49,7 +49,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" aria-label="my-aria-label" />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
         expect(input.getAttribute("aria-label")).toBe("my-aria-label");
@@ -62,7 +62,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" value={6} />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
         expect(input.value).toBe("6");
@@ -82,7 +82,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" disabled={true} onChange={handleChange} />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
         const span = wrapper.container.querySelector(".xy-checkbox");
@@ -105,7 +105,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" readOnly={true} onChange={handleChange} />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
         const span = wrapper.container.querySelector(".xy-checkbox");
@@ -128,7 +128,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" checked={true} onChange={handleChange} />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         const input = wrapper.getByLabelText("useTheme", { selector: "input" }) as HTMLInputElement;
 
@@ -145,7 +145,7 @@ describe("Checkbox", () => {
                     <CheckboxMini id="theme" checked={false} onChange={handleChange} />
                     useTheme
                 </label>
-            </div>
+            </div>,
         );
         expect(input.checked).toBeFalsy();
         // 并不会触发onChange回调

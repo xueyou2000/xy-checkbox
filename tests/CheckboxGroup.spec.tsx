@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import { Checkbox, CheckboxGroup } from "../src";
 
 describe("CheckboxGroup", () => {
@@ -9,7 +9,7 @@ describe("CheckboxGroup", () => {
                 <Checkbox value="a">苹果</Checkbox>
                 <Checkbox value="b">梨子</Checkbox>
                 <Checkbox value="c">西瓜</Checkbox>
-            </CheckboxGroup>
+            </CheckboxGroup>,
         );
 
         const checkeds = wrapper.container.querySelectorAll(`input:checked`);
@@ -23,7 +23,7 @@ describe("CheckboxGroup", () => {
                 <Checkbox value="a">苹果</Checkbox>
                 <Checkbox value="b">梨子</Checkbox>
                 <Checkbox value="c">西瓜</Checkbox>
-            </CheckboxGroup>
+            </CheckboxGroup>,
         );
 
         const checkeds = wrapper.container.querySelectorAll(`input:checked`);
@@ -36,7 +36,7 @@ describe("CheckboxGroup", () => {
                 <Checkbox value="a">苹果</Checkbox>
                 <Checkbox value="b">梨子</Checkbox>
                 <Checkbox value="c">西瓜</Checkbox>
-            </CheckboxGroup>
+            </CheckboxGroup>,
         );
 
         fireEvent.click(wrapper.getByText("苹果").parentElement);

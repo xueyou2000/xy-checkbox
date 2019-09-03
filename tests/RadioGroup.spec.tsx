@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import { Radio, RadioGroup } from "../src";
 
 describe("RadioGroup", () => {
@@ -9,7 +9,7 @@ describe("RadioGroup", () => {
                 <Radio value="a">苹果</Radio>
                 <Radio value="b">梨子</Radio>
                 <Radio value="c">西瓜</Radio>
-            </RadioGroup>
+            </RadioGroup>,
         );
 
         const checkeds = wrapper.container.querySelectorAll(`input:checked`);
@@ -23,7 +23,7 @@ describe("RadioGroup", () => {
                 <Radio value="a">苹果</Radio>
                 <Radio value="b">梨子</Radio>
                 <Radio value="c">西瓜</Radio>
-            </RadioGroup>
+            </RadioGroup>,
         );
 
         const checkeds = wrapper.container.querySelectorAll(`input:checked`);
@@ -36,7 +36,7 @@ describe("RadioGroup", () => {
                 <Radio value="a">苹果</Radio>
                 <Radio value="b">梨子</Radio>
                 <Radio value="c">西瓜</Radio>
-            </RadioGroup>
+            </RadioGroup>,
         );
 
         fireEvent.click(wrapper.getByText("苹果").parentElement);
