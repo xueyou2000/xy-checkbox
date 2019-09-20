@@ -5,10 +5,11 @@ import { GroupContext } from "./Context";
 import { CheckboxProps } from "./interface";
 
 export default React.forwardRef((props: CheckboxProps, ref: React.MutableRefObject<any>) => {
+    const { equal } = props;
     const context = useContext(GroupContext);
     const _props: CheckboxProps = Object.assign({}, props);
     if (context && context.value && context.onChange) {
-        _props.checked = context.value.some((x) => x === props.value);
+        _props.checked = context.value.some((x) => (equal ? equal(x, props.value) : x === props.value));
         _props.onChange = context.onChange;
     }
     if (context && context.disabled !== undefined) {

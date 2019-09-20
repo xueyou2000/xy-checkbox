@@ -60,6 +60,11 @@ export interface CheckboxProps {
      */
     readOnly?: boolean;
     /**
+     * 比较是否相等
+     * @description 默认用 === 强等于，在value是对象，且react每次渲染都重新构造了新的对象，导致比对不成功
+     */
+    equal?: (eachValue: any, value: any) => boolean;
+    /**
      * Checkbox值更改事件
      */
     onChange?: (chcked: boolean, value: any) => void;
